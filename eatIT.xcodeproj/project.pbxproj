@@ -14,6 +14,8 @@
 		05BA81A22BC6EF5F009B8C8A /* eatIT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05BA81A02BC6EF5F009B8C8A /* eatIT.xcdatamodeld */; };
 		05BA81A42BC6EF60009B8C8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BA81A32BC6EF60009B8C8A /* Assets.xcassets */; };
 		05BA81A72BC6EF60009B8C8A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 05BA81A62BC6EF60009B8C8A /* Base */; };
+		05BA81B02BC6EFBA009B8C8A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 05BA81AF2BC6EFBA009B8C8A /* Alamofire */; };
+		05BA81B22BC6EFBA009B8C8A /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 05BA81B12BC6EFBA009B8C8A /* AlamofireDynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05BA81B02BC6EFBA009B8C8A /* Alamofire in Frameworks */,
+				05BA81B22BC6EFBA009B8C8A /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +62,48 @@
 		05BA81962BC6EF5F009B8C8A /* eatIT */ = {
 			isa = PBXGroup;
 			children = (
-				05BA81972BC6EF5F009B8C8A /* AppDelegate.swift */,
-				05BA81992BC6EF5F009B8C8A /* SceneDelegate.swift */,
-				05BA819B2BC6EF5F009B8C8A /* ViewController.swift */,
-				05BA819D2BC6EF5F009B8C8A /* Main.storyboard */,
+				05BA81B42BC6F010009B8C8A /* ViewControllers */,
+				05BA81B62BC6F029009B8C8A /* Storyboards */,
+				05BA81B52BC6F022009B8C8A /* Models */,
+				05BA81B32BC6EFD3009B8C8A /* Configuration */,
 				05BA81A32BC6EF60009B8C8A /* Assets.xcassets */,
-				05BA81A52BC6EF60009B8C8A /* LaunchScreen.storyboard */,
-				05BA81A82BC6EF60009B8C8A /* Info.plist */,
-				05BA81A02BC6EF5F009B8C8A /* eatIT.xcdatamodeld */,
 			);
 			path = eatIT;
+			sourceTree = "<group>";
+		};
+		05BA81B32BC6EFD3009B8C8A /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				05BA81972BC6EF5F009B8C8A /* AppDelegate.swift */,
+				05BA81992BC6EF5F009B8C8A /* SceneDelegate.swift */,
+				05BA81A82BC6EF60009B8C8A /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		05BA81B42BC6F010009B8C8A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				05BA819B2BC6EF5F009B8C8A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		05BA81B52BC6F022009B8C8A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05BA81A02BC6EF5F009B8C8A /* eatIT.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		05BA81B62BC6F029009B8C8A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				05BA819D2BC6EF5F009B8C8A /* Main.storyboard */,
+				05BA81A52BC6EF60009B8C8A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +122,10 @@
 			dependencies = (
 			);
 			name = eatIT;
+			packageProductDependencies = (
+				05BA81AF2BC6EFBA009B8C8A /* Alamofire */,
+				05BA81B12BC6EFBA009B8C8A /* AlamofireDynamic */,
+			);
 			productName = eatIT;
 			productReference = 05BA81942BC6EF5F009B8C8A /* eatIT.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +154,9 @@
 				Base,
 			);
 			mainGroup = 05BA818B2BC6EF5F009B8C8A;
+			packageReferences = (
+				05BA81AE2BC6EFBA009B8C8A /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 05BA81952BC6EF5F009B8C8A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -298,12 +341,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AM64M5A8BU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = eatIT/Info.plist;
+				INFOPLIST_FILE = eatIT/Configuration/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Eat It";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +356,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = DnD.eatIT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -326,12 +375,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AM64M5A8BU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = eatIT/Info.plist;
+				INFOPLIST_FILE = eatIT/Configuration/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Eat It";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,9 +390,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = DnD.eatIT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -367,6 +422,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		05BA81AE2BC6EFBA009B8C8A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		05BA81AF2BC6EFBA009B8C8A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05BA81AE2BC6EFBA009B8C8A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		05BA81B12BC6EFBA009B8C8A /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05BA81AE2BC6EFBA009B8C8A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		05BA81A02BC6EF5F009B8C8A /* eatIT.xcdatamodeld */ = {
