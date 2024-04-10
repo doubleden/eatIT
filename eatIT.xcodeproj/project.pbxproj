@@ -16,6 +16,7 @@
 		05BA81A72BC6EF60009B8C8A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 05BA81A62BC6EF60009B8C8A /* Base */; };
 		05BA81B02BC6EFBA009B8C8A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 05BA81AF2BC6EFBA009B8C8A /* Alamofire */; };
 		05BA81B22BC6EFBA009B8C8A /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 05BA81B12BC6EFBA009B8C8A /* AlamofireDynamic */; };
+		05BA81B82BC6F60E009B8C8A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA81B72BC6F60E009B8C8A /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		05BA81A32BC6EF60009B8C8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05BA81A62BC6EF60009B8C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05BA81A82BC6EF60009B8C8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05BA81B72BC6F60E009B8C8A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				05BA81A02BC6EF5F009B8C8A /* eatIT.xcdatamodeld */,
+				05BA81B72BC6F60E009B8C8A /* Recipe.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				05BA81A22BC6EF5F009B8C8A /* eatIT.xcdatamodeld in Sources */,
 				05BA81982BC6EF5F009B8C8A /* AppDelegate.swift in Sources */,
 				05BA819A2BC6EF5F009B8C8A /* SceneDelegate.swift in Sources */,
+				05BA81B82BC6F60E009B8C8A /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
