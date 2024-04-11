@@ -7,13 +7,18 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class RandomRecipeViewController: UIViewController {
 
+    @IBOutlet var recipeImage: UIImageView!
+    @IBOutlet var summaryLabel: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func rightBarButtonDidTapped(_ sender: UIBarButtonItem) {
+    }
+    
 }
 
