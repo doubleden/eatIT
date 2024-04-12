@@ -5,7 +5,7 @@
 //  Created by Denis Denisov on 10/4/24.
 //
 
-struct Recipes: Codable {
+struct Data: Codable {
     let recipes: [Recipe]
 }
 

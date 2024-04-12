@@ -32,12 +32,12 @@ final class NetworkManager {
     
     private init() {}
     
-    func fetchRecipe(from url: URL, with headers: HTTPHeaders) async throws -> Recipes {
+    func fetchRecipe(from url: URL, with headers: HTTPHeaders) async throws -> Data {
         let request = AF.request(url, headers: headers).validate()
         
         do {
-            let response = try await request.serializingDecodable(Recipes.self).value
-            return response
+            let data = try await request.serializingDecodable(Data.self).value
+            return data
         } catch {
             throw error
         }

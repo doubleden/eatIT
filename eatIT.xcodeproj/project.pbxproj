@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		055C76BE2BC971B0000345BC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 055C76BD2BC971B0000345BC /* Kingfisher */; };
+		059D837C2BC9832100111476 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 059D837B2BC9832100111476 /* Alamofire */; };
+		059D837E2BC9832100111476 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 059D837D2BC9832100111476 /* AlamofireDynamic */; };
+		059D83802BC9832D00111476 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 059D837F2BC9832D00111476 /* Kingfisher */; };
 		05BA81982BC6EF5F009B8C8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA81972BC6EF5F009B8C8A /* AppDelegate.swift */; };
 		05BA819A2BC6EF5F009B8C8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA81992BC6EF5F009B8C8A /* SceneDelegate.swift */; };
 		05BA819C2BC6EF5F009B8C8A /* RandomRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BA819B2BC6EF5F009B8C8A /* RandomRecipeViewController.swift */; };
@@ -19,8 +21,6 @@
 		05F601A72BC88501007F21F0 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F601A62BC88501007F21F0 /* FavoritesListViewController.swift */; };
 		05F601AA2BC95729007F21F0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F601A92BC95729007F21F0 /* StorageManager.swift */; };
 		05F601AC2BC95737007F21F0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F601AB2BC95737007F21F0 /* NetworkManager.swift */; };
-		05F601B22BC96439007F21F0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 05F601B12BC96439007F21F0 /* Alamofire */; };
-		05F601B42BC96439007F21F0 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 05F601B32BC96439007F21F0 /* AlamofireDynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +44,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				055C76BE2BC971B0000345BC /* Kingfisher in Frameworks */,
-				05F601B22BC96439007F21F0 /* Alamofire in Frameworks */,
-				05F601B42BC96439007F21F0 /* AlamofireDynamic in Frameworks */,
+				059D83802BC9832D00111476 /* Kingfisher in Frameworks */,
+				059D837C2BC9832100111476 /* Alamofire in Frameworks */,
+				059D837E2BC9832100111476 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +145,9 @@
 			);
 			name = eatIT;
 			packageProductDependencies = (
-				05F601B12BC96439007F21F0 /* Alamofire */,
-				05F601B32BC96439007F21F0 /* AlamofireDynamic */,
-				055C76BD2BC971B0000345BC /* Kingfisher */,
+				059D837B2BC9832100111476 /* Alamofire */,
+				059D837D2BC9832100111476 /* AlamofireDynamic */,
+				059D837F2BC9832D00111476 /* Kingfisher */,
 			);
 			productName = eatIT;
 			productReference = 05BA81942BC6EF5F009B8C8A /* eatIT.app */;
@@ -471,20 +471,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		055C76BD2BC971B0000345BC /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 055C76BC2BC971B0000345BC /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		05F601B12BC96439007F21F0 /* Alamofire */ = {
+		059D837B2BC9832100111476 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 05BA81AE2BC6EFBA009B8C8A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		05F601B32BC96439007F21F0 /* AlamofireDynamic */ = {
+		059D837D2BC9832100111476 /* AlamofireDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 05BA81AE2BC6EFBA009B8C8A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
+		};
+		059D837F2BC9832D00111476 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 055C76BC2BC971B0000345BC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 
