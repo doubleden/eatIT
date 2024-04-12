@@ -38,11 +38,19 @@ private extension RandomRecipeViewController {
             switch response {
             case .success(let recipes):
                 self.recipe = recipes.recipes.first
-                summaryLabel.text = recipe.summary
+                summaryLabel.text = removeHTMLTags(from: recipe.summary)
                 recipeImage.kf.setImage(with: URL(string: recipe.image))
             case .failure(let error):
                 print(error)
             }
         }
+    }
+    
+    func removeHTMLTags(from string: String) -> String {
+        let pattern = "<[^>]+>"
+        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        let range = NSRange(location: 0, length: string.utf16.count)
+        let htmlLessString = regex.stringByReplacingMatches(in: string, options: [], range: range, withTemplate: "")
+        return htmlLessString
     }
 }
