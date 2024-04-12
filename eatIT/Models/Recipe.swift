@@ -5,7 +5,11 @@
 //  Created by Denis Denisov on 10/4/24.
 //
 
-struct Recipe {
+struct Recipes: Codable {
+    let recipes: [Recipe]
+}
+
+struct Recipe: Codable {
     let title: String
     let image: String
     let summary: String
@@ -14,9 +18,9 @@ struct Recipe {
     let extendedIngredients: [Ingredient]
     
     let healthScore: Int
-    let readyInMinute: Int
+    let readyInMinutes: Int
 }
 
-struct Ingredient {
+struct Ingredient: Codable {
     let original: String
 }
