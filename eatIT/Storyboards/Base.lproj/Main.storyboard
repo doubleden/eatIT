@@ -22,7 +22,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Clf-qy-1xJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Clf-qy-1xJ">
                                 <rect key="frame" x="16" y="175" width="361" height="181"/>
                             </imageView>
                         </subviews>
@@ -39,15 +39,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="u3h-0w-FU3">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="repeat.circle" catalog="system" id="6WB-e5-2uZ">
+                            <connections>
+                                <action selector="updateButtonAction" destination="BYZ-38-t0r" id="jEJ-aV-yk8"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="star.square.on.square" catalog="system" id="Y7P-CL-NnO">
                             <connections>
-                                <action selector="rightBarButtonDidTapped:" destination="BYZ-38-t0r" id="bXD-4l-DDZ"/>
+                                <action selector="saveRecipeAction" destination="BYZ-38-t0r" id="uZP-XJ-kFx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="recipeImage" destination="Clf-qy-1xJ" id="3SQ-Ii-0tR"/>
-                        <outlet property="summaryLabel" destination="8bC-Xf-vdC" id="iIf-1t-3cq"/>
+                        <outlet property="summaryLabel" destination="a0d-cS-hll" id="dkI-z4-ihR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -106,6 +111,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3Q8-Pz-NSY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vxU-YI-4Zc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -140,6 +146,7 @@
     </scenes>
     <resources>
         <image name="infinity.circle" catalog="system" width="128" height="123"/>
+        <image name="repeat.circle" catalog="system" width="128" height="123"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.square.on.square" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
