@@ -34,14 +34,19 @@ final class RandomRecipeViewController: UIViewController {
 
 private extension RandomRecipeViewController {
     func fetchData() {
-        networkManager.fetchRecipe(from: API.randomRecipe.url, with: API.randomRecipe.headers) { [unowned self] response in
-            switch response {
-            case .success(let recipes):
-                self.recipe = recipes.recipes.first
+        
+        Task {
+            do {
+                guard let recipe = try await networkManager.fetchRecipe(
+                    from: API.randomRecipe.url,
+                    with: API.randomRecipe.headers
+                ).recipes
+                    .first else { return }
+                
                 summaryLabel.text = removeHTMLTags(from: recipe.summary)
                 recipeImage.kf.setImage(with: URL(string: recipe.image))
-            case .failure(let error):
-                print(error)
+            } catch {
+                print(error.localizedDescription)
             }
         }
     }

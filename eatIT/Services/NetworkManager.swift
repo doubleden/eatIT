@@ -32,20 +32,14 @@ final class NetworkManager {
     
     private init() {}
     
-    func fetchRecipe(
-        from url: URL,
-        with headers: HTTPHeaders,
-        _ completion: @escaping(Result<Recipes, AFError>) -> Void
-    ) {
-        AF.request(url, headers: headers)
-            .validate()
-            .responseDecodable(of: Recipes.self) { response in
-                switch response.result {
-                case .success(let recipes):
-                    completion(.success(recipes))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+    func fetchRecipe(from url: URL, with headers: HTTPHeaders) async throws -> Recipes {
+        let request = AF.request(url, headers: headers).validate()
+        
+        do {
+            let response = try await request.serializingDecodable(Recipes.self).value
+            return response
+        } catch {
+            throw error
         }
     }
 }
