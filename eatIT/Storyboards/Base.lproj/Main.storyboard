@@ -75,6 +75,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ol3-Pt-WZV" kind="presentation" id="s5W-Vh-FBT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -87,6 +90,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z91-mB-INK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2400" y="243"/>
+        </scene>
+        <!--Favorite Recipe View Controller-->
+        <scene sceneID="3P7-nC-hnZ">
+            <objects>
+                <viewController id="Ol3-Pt-WZV" customClass="FavoriteRecipeViewController" customModule="eatIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dfs-PE-JHb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQk-cw-lgA">
+                                <rect key="frame" x="16" y="221" width="361" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KkM-CT-gh6">
+                                <rect key="frame" x="16" y="20" width="361" height="181"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fd3-wk-xhD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KkM-CT-gh6" firstAttribute="top" secondItem="Fd3-wk-xhD" secondAttribute="top" constant="20" id="3dj-lm-w3R"/>
+                            <constraint firstItem="KQk-cw-lgA" firstAttribute="leading" secondItem="Fd3-wk-xhD" secondAttribute="leading" constant="16" id="4kh-ZY-hbK"/>
+                            <constraint firstItem="KQk-cw-lgA" firstAttribute="top" secondItem="KkM-CT-gh6" secondAttribute="bottom" constant="20" id="EeU-Fe-f4h"/>
+                            <constraint firstItem="KkM-CT-gh6" firstAttribute="leading" secondItem="Fd3-wk-xhD" secondAttribute="leading" constant="16" id="Lco-oz-0uE"/>
+                            <constraint firstItem="KkM-CT-gh6" firstAttribute="height" secondItem="dfs-PE-JHb" secondAttribute="height" multiplier="0.214964" id="acw-vm-d0v"/>
+                            <constraint firstItem="Fd3-wk-xhD" firstAttribute="trailing" secondItem="KkM-CT-gh6" secondAttribute="trailing" constant="16" id="hki-6c-5f6"/>
+                            <constraint firstItem="Fd3-wk-xhD" firstAttribute="trailing" secondItem="KQk-cw-lgA" secondAttribute="trailing" constant="16" id="vm1-ee-1Bt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recipeImage" destination="KkM-CT-gh6" id="7hu-Ua-pFQ"/>
+                        <outlet property="recipeLabel" destination="KQk-cw-lgA" id="Lf4-Am-7en"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQ6-fR-31H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3276" y="243"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="z54-md-wnf">

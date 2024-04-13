@@ -36,7 +36,6 @@ final class RandomRecipeViewController: UIViewController {
 
 private extension RandomRecipeViewController {
     func fetchData() {
-        
         Task {
             do {
                 recipe = try await networkManager.fetchRecipe(

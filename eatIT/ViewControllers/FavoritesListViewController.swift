@@ -20,6 +20,14 @@ final class FavoritesListViewController: UITableViewController {
         super.viewWillAppear(animated)
         fetchData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let favoriteRecipeVC = segue.destination as? FavoriteRecipeViewController
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        tableView.deselectRow(at: indexPath, animated: true)
+        let recipe = recipes[indexPath.row]
+        favoriteRecipeVC?.recipe = recipe
+    }
 
     // MARK: - Table view data source
 

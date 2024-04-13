@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0542432B2BCB30CB002EF575 /* FavoriteRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542432A2BCB30CB002EF575 /* FavoriteRecipeViewController.swift */; };
 		059D837C2BC9832100111476 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 059D837B2BC9832100111476 /* Alamofire */; };
 		059D837E2BC9832100111476 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 059D837D2BC9832100111476 /* AlamofireDynamic */; };
 		059D83802BC9832D00111476 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 059D837F2BC9832D00111476 /* Kingfisher */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0542432A2BCB30CB002EF575 /* FavoriteRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeViewController.swift; sourceTree = "<group>"; };
 		05BA81942BC6EF5F009B8C8A /* eatIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eatIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BA81972BC6EF5F009B8C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05BA81992BC6EF5F009B8C8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				05BA819B2BC6EF5F009B8C8A /* RandomRecipeViewController.swift */,
 				05F601A62BC88501007F21F0 /* FavoritesListViewController.swift */,
+				0542432A2BCB30CB002EF575 /* FavoriteRecipeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				05F601AA2BC95729007F21F0 /* StorageManager.swift in Sources */,
 				05F601AC2BC95737007F21F0 /* NetworkManager.swift in Sources */,
 				05BA81982BC6EF5F009B8C8A /* AppDelegate.swift in Sources */,
+				0542432B2BCB30CB002EF575 /* FavoriteRecipeViewController.swift in Sources */,
 				05BA819A2BC6EF5F009B8C8A /* SceneDelegate.swift in Sources */,
 				05BA81B82BC6F60E009B8C8A /* Recipe.swift in Sources */,
 			);
