@@ -29,6 +29,7 @@ final class RandomRecipeViewController: UIViewController {
     
     
     @IBAction func saveRecipeAction() {
+        
     }
 }
 
@@ -37,12 +38,12 @@ private extension RandomRecipeViewController {
         
         Task {
             do {
-                guard let recipe = try await networkManager.fetchRecipe(
+                recipe = try await networkManager.fetchRecipe(
                     from: API.randomRecipe.url,
                     with: API.randomRecipe.headers
                 ).recipes
-                    .first else { return }
-                
+                    .first
+                navigationItem.title = recipe.title
                 summaryLabel.text = removeHTMLTags(from: recipe.summary)
                 recipeImage.kf.setImage(with: URL(string: recipe.image))
             } catch {
