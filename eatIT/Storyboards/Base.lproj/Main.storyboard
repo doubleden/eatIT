@@ -59,7 +59,7 @@
             </objects>
             <point key="canvasLocation" x="2368.7022900763359" y="-465.49295774647891"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Favorites-->
         <scene sceneID="60G-4i-NBh">
             <objects>
                 <tableViewController id="NJK-S4-ME8" customClass="FavoritesListViewController" customModule="eatIT" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,7 +82,7 @@
                             <outlet property="delegate" destination="NJK-S4-ME8" id="Xio-7u-H9I"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="FnB-9d-LaL"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="FnB-9d-LaL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z91-mB-INK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

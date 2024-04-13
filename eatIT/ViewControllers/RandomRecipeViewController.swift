@@ -14,6 +14,7 @@ final class RandomRecipeViewController: UIViewController {
     @IBOutlet var summaryLabel: UILabel!
     
     private let networkManager = NetworkManager.shared
+    private let storageManager = StorageManager.shared
     private var recipe: Recipe!
     
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ final class RandomRecipeViewController: UIViewController {
     
     
     @IBAction func saveRecipeAction() {
-        
+        storageManager.save(recipe)
     }
 }
 

@@ -10,7 +10,7 @@ import CoreData
 final class StorageManager {
      static let shared = StorageManager()
     
-    let persistentContainer: NSPersistentContainer = {
+    private let persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "eatIT")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -26,36 +26,23 @@ final class StorageManager {
     
     private init() {}
     
-//    func fetchData(_ completion: @escaping(Result<[CDRecipe], Error>) -> Void) {
-//        let fetchRequest = CDRecipe
-//        
-//        do {
-//            let taskList = try context.fetch(fetchRequest)
-//            DispatchQueue.main.async {
-//                completion(.success(taskList))
-//            }
-//        } catch {
-//            completion(.failure(error))
-//        }
-//    }
-    func fetchData(_ completion: @escaping(Result<[Recipe], Error>) -> Void) {
+    func fetchData(_ completion: @escaping(Result<[CDRecipe], Error>) -> Void) {
         let fetchRequest = CDRecipe.fetchRequest()
         
         do {
-            let cdRecipe = try context.fetch(fetchRequest)
-            guard let recipe = cdRecipe as? [Recipe] else { return }
+            let cdRecipes = try context.fetch(fetchRequest)
             DispatchQueue.main.async {
-                completion(.success(recipe))
+                completion(.success(cdRecipes))
             }
         } catch {
             completion(.failure(error))
         }
     }
     
-    func save(_ recipe: Recipe) -> CDRecipe {
-        let cdRecipe = recipe.toCDRecipe(context: context)
+    func save(_ recipe: Recipe) {
+        
+        recipe.toCDRecipe(context: context)
         saveContext()
-        return cdRecipe
     }
     
     func delete(_ recipe: CDRecipe) {
@@ -77,7 +64,7 @@ final class StorageManager {
 }
 
 extension Recipe {
-    func toCDRecipe(context: NSManagedObjectContext) -> CDRecipe {
+    func toCDRecipe(context: NSManagedObjectContext) {
         let cdRecipe = CDRecipe(context: context)
         cdRecipe.title = self.title
         cdRecipe.image = self.image
@@ -89,7 +76,6 @@ extension Recipe {
         
         let cdIngredients = self.extendedIngredients.map { $0.toCDIngredient(context: context) }
         cdRecipe.extendedIngredients = NSSet(array: cdIngredients)
-        return cdRecipe
     }
 }
 
