@@ -20,7 +20,6 @@ final class FavoriteRecipeViewController: UIViewController {
         recipeImage.layer.cornerRadius = 25
 
         recipeImage.kf.setImage(with: URL(string: recipe.image ?? ""))
-        recipeLabel.text = recipe.summary
+        recipeLabel.text = removeHTMLTags(from: recipe.summary ?? "")
     }
-
 }

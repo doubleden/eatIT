@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0542432B2BCB30CB002EF575 /* FavoriteRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542432A2BCB30CB002EF575 /* FavoriteRecipeViewController.swift */; };
+		0542432E2BCB34ED002EF575 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542432D2BCB34ED002EF575 /* Extension + UIViewController.swift */; };
+		054243302BCB3584002EF575 /* Extension + Recipe + Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542432F2BCB3584002EF575 /* Extension + Recipe + Ingredient.swift */; };
 		059D837C2BC9832100111476 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 059D837B2BC9832100111476 /* Alamofire */; };
 		059D837E2BC9832100111476 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 059D837D2BC9832100111476 /* AlamofireDynamic */; };
 		059D83802BC9832D00111476 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 059D837F2BC9832D00111476 /* Kingfisher */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		0542432A2BCB30CB002EF575 /* FavoriteRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeViewController.swift; sourceTree = "<group>"; };
+		0542432D2BCB34ED002EF575 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
+		0542432F2BCB3584002EF575 /* Extension + Recipe + Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Recipe + Ingredient.swift"; sourceTree = "<group>"; };
 		05BA81942BC6EF5F009B8C8A /* eatIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eatIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BA81972BC6EF5F009B8C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05BA81992BC6EF5F009B8C8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0542432C2BCB34CC002EF575 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0542432D2BCB34ED002EF575 /* Extension + UIViewController.swift */,
+				0542432F2BCB3584002EF575 /* Extension + Recipe + Ingredient.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		05BA818B2BC6EF5F009B8C8A = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +91,7 @@
 				05BA81B62BC6F029009B8C8A /* Storyboards */,
 				05F601A82BC956D8007F21F0 /* Services */,
 				05BA81B52BC6F022009B8C8A /* Models */,
+				0542432C2BCB34CC002EF575 /* Extensions */,
 				05BA81B32BC6EFD3009B8C8A /* Configuration */,
 				05BA81A32BC6EF60009B8C8A /* Assets.xcassets */,
 			);
@@ -211,8 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0542432E2BCB34ED002EF575 /* Extension + UIViewController.swift in Sources */,
 				05F601A72BC88501007F21F0 /* FavoritesListViewController.swift in Sources */,
 				05BA819C2BC6EF5F009B8C8A /* RandomRecipeViewController.swift in Sources */,
+				054243302BCB3584002EF575 /* Extension + Recipe + Ingredient.swift in Sources */,
 				05BA81A22BC6EF5F009B8C8A /* eatIT.xcdatamodeld in Sources */,
 				05F601AA2BC95729007F21F0 /* StorageManager.swift in Sources */,
 				05F601AC2BC95737007F21F0 /* NetworkManager.swift in Sources */,

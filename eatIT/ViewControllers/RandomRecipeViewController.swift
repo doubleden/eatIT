@@ -51,12 +51,4 @@ private extension RandomRecipeViewController {
             }
         }
     }
-    
-    func removeHTMLTags(from string: String) -> String {
-        let pattern = "<[^>]+>"
-        let regex = try! NSRegularExpression(pattern: pattern, options: [])
-        let range = NSRange(location: 0, length: string.utf16.count)
-        let htmlLessString = regex.stringByReplacingMatches(in: string, options: [], range: range, withTemplate: "")
-        return htmlLessString
-    }
 }
