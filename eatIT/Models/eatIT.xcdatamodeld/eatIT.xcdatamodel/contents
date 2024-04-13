@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Ingredient" representedClassName="Ingredient" syncable="YES" codeGenerationType="class">
+    <entity name="CDIngredient" representedClassName="CDIngredient" syncable="YES" codeGenerationType="class">
         <attribute name="original" optional="YES" attributeType="String"/>
-        <relationship name="relationshipRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="extendedIngredients" inverseEntity="Recipe"/>
+        <relationship name="relationshipRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDRecipe" inverseName="extendedIngredients" inverseEntity="CDRecipe"/>
     </entity>
-    <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
+    <entity name="CDRecipe" representedClassName="CDRecipe" syncable="YES" codeGenerationType="class">
         <attribute name="dishTypes" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformerName"/>
         <attribute name="healthScore" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" optional="YES" attributeType="String"/>
@@ -12,6 +12,6 @@
         <attribute name="readyInMinutes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="summary" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="extendedIngredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="relationshipRecipe" inverseEntity="Ingredient"/>
+        <relationship name="extendedIngredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDIngredient" inverseName="relationshipRecipe" inverseEntity="CDIngredient"/>
     </entity>
 </model>

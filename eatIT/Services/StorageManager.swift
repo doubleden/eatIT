@@ -20,7 +20,48 @@ final class StorageManager {
         return container
     }()
     
+    private var context: NSManagedObjectContext {
+        persistentContainer.viewContext
+    }
+    
     private init() {}
+    
+//    func fetchData(_ completion: @escaping(Result<[CDRecipe], Error>) -> Void) {
+//        let fetchRequest = CDRecipe
+//        
+//        do {
+//            let taskList = try context.fetch(fetchRequest)
+//            DispatchQueue.main.async {
+//                completion(.success(taskList))
+//            }
+//        } catch {
+//            completion(.failure(error))
+//        }
+//    }
+    func fetchData(_ completion: @escaping(Result<[Recipe], Error>) -> Void) {
+        let fetchRequest = CDRecipe.fetchRequest()
+        
+        do {
+            let cdRecipe = try context.fetch(fetchRequest)
+            guard let recipe = cdRecipe as? [Recipe] else { return }
+            DispatchQueue.main.async {
+                completion(.success(recipe))
+            }
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    func save(_ recipe: Recipe) -> CDRecipe {
+        let cdRecipe = recipe.toCDRecipe(context: context)
+        saveContext()
+        return cdRecipe
+    }
+    
+    func delete(_ recipe: CDRecipe) {
+        context.delete(recipe)
+        saveContext()
+    }
     
     private func saveContext () {
         let context = persistentContainer.viewContext
@@ -32,5 +73,30 @@ final class StorageManager {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+}
+
+extension Recipe {
+    func toCDRecipe(context: NSManagedObjectContext) -> CDRecipe {
+        let cdRecipe = CDRecipe(context: context)
+        cdRecipe.title = self.title
+        cdRecipe.image = self.image
+        cdRecipe.summary = self.summary
+        cdRecipe.instructions = self.instructions
+        cdRecipe.dishTypes = self.dishTypes as NSObject
+        cdRecipe.healthScore = Int64(self.healthScore)
+        cdRecipe.readyInMinutes = Int64(self.readyInMinutes)
+        
+        let cdIngredients = self.extendedIngredients.map { $0.toCDIngredient(context: context) }
+        cdRecipe.extendedIngredients = NSSet(array: cdIngredients)
+        return cdRecipe
+    }
+}
+
+extension Ingredient {
+    func toCDIngredient(context: NSManagedObjectContext) -> CDIngredient {
+        let cdIngredient = CDIngredient(context: context)
+        cdIngredient.original = self.original
+        return cdIngredient
     }
 }
