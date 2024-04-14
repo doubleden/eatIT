@@ -30,6 +30,10 @@ final class RandomRecipeViewController: UIViewController {
     
     
     @IBAction func saveRecipeAction() {
+        guard storageManager.isRecipeInDataBase(recipe) else {
+            print("Этот рецепт уже есть")
+            return
+        }
         storageManager.save(recipe)
     }
 }

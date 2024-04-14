@@ -40,14 +40,43 @@ final class StorageManager {
     }
     
     func save(_ recipe: Recipe) {
+        let cdRecipe = CDRecipe(context: context)
+        cdRecipe.title = recipe.title
+        cdRecipe.image = recipe.image
+        cdRecipe.summary = recipe.summary
+        cdRecipe.dishTypes = recipe.dishTypes as NSObject
+        cdRecipe.instructions = recipe.instructions
+        cdRecipe.readyInMinutes = Int64(recipe.readyInMinutes)
+        cdRecipe.healthScore = Int64(recipe.healthScore)
         
-        recipe.toCDRecipe(context: context)
+        let ingredientsSet = recipe.extendedIngredients.map { ingredient -> CDIngredient in
+            let cdIngredient = CDIngredient(context: context)
+            cdIngredient.original = ingredient.original
+            return cdIngredient
+        }
+        cdRecipe.extendedIngredients = NSSet(array: ingredientsSet)
+        
         saveContext()
     }
     
     func delete(_ recipe: CDRecipe) {
         context.delete(recipe)
         saveContext()
+    }
+    
+    func isRecipeInDataBase(_ recipe: Recipe) -> Bool {
+        let fetchRequest = CDRecipe.fetchRequest()
+
+        let predicate = NSPredicate(format: "title == %@", recipe.title)
+        fetchRequest.predicate = predicate
+
+        do {
+            let cdRecipes = try context.fetch(fetchRequest)
+            return cdRecipes.isEmpty
+        } catch {
+            print("Ошибка при выполнении запроса: \(error)")
+            return false
+        }
     }
     
     private func saveContext () {
